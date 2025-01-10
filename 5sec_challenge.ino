@@ -59,7 +59,7 @@ void output(const uint16_t raw) {
   Serial.print(a);
   Serial.print(b);
   Serial.print(c);
-Serial.print(d    );
+  Serial.print(d);
   Serial.println(" ms");
 }
 

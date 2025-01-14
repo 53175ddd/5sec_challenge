@@ -466,7 +466,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "../PCB_display/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "../../../Blender/5sec_challenge/5sec_challenge_display.step",

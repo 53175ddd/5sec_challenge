@@ -383,7 +383,7 @@
 			)
 		)
 		(property "Value" "Arduino_Nano_v3.x"
-			(at 8.89 19.05 360)
+			(at 8.89 19.05 0)
 			(layer "F.Fab")
 			(uuid "a019a5a1-25d2-4c08-bcb5-0b06da4013d8")
 			(effects
@@ -760,7 +760,7 @@
 			)
 		)
 		(fp_text user "${REFERENCE}"
-			(at 6.35 19.05 360)
+			(at 6.35 19.05 0)
 			(layer "F.Fab")
 			(uuid "bf903c8d-0e39-4fa9-aa18-e12790c76369")
 			(effects
@@ -2372,7 +2372,7 @@
 			(uuid "5d1c31ea-b02d-486e-a946-7b7d344a9956")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 7.62 360)
+			(at 0 7.62 0)
 			(layer "F.Fab")
 			(uuid "f8b18f85-7db3-4f6c-aaa1-e0856229b1d4")
 			(effects

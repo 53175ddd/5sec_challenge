@@ -3454,13 +3454,13 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x07_Pin")
-		(at 110.49 113.03 90)
+		(at 110.49 113.03 270)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d0011770-2782-4124-bf2f-744443e19d79")
 		(property "Reference" "J5"
 			(at 110.49 115.57 90)
@@ -3478,7 +3478,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Horizontal"
 			(at 110.49 113.03 0)
 			(effects
 				(font

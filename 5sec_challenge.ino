@@ -6,6 +6,8 @@
 #define DOUT  4
 #define CLK   3
 
+bool is_pressed = false;
+
 uint16_t counter   = 0;
 uint8_t  sw_status = 0;
 
@@ -23,6 +25,10 @@ ISR(TIMER1_COMPA_vect) {
     counter++;
     if(counter > 9999) {
       counter = 9999;
+    }
+
+    if(is_pressed) {
+      output(counter);
     }
   }
 
@@ -48,7 +54,11 @@ void setup() {
   delayMicroseconds(10);
   digitalWrite(LATCH, HIGH);
 
-  delay(1000);
+  delay(100);
+
+  is_pressed = (digitalRead(SW) == LOW) ? true : false;
+
+  delay(100);
 
   digitalWrite(LATCH,  LOW);
   delayMicroseconds(10);
@@ -59,7 +69,7 @@ void setup() {
   delayMicroseconds(10);
   digitalWrite(LATCH, HIGH);
 
-  delay(1000);
+  delay(100);
 
   digitalWrite(LATCH,  LOW);
   delayMicroseconds(10);
@@ -69,6 +79,10 @@ void setup() {
   shiftOut(DOUT, CLK, LSBFIRST, font[0] + 1);
   delayMicroseconds(10);
   digitalWrite(LATCH, HIGH);
+
+  while(digitalRead(SW) == LOW);
+
+  delay(10);
 
   TCCR1A = 0;                           // タイマー 1 動作モードを初期化
   TCCR1B = (1 << WGM12) | (1 << CS10);  // CTC モード 分周比 1
@@ -105,11 +119,13 @@ void output(const uint16_t raw) {
   delayMicroseconds(10);
   digitalWrite(LATCH, HIGH);
 
-  Serial.print(a);
-  Serial.print(b);
-  Serial.print(c);
-  Serial.print(d);
-  Serial.print(" ms\n");
+  if(!is_pressed) {
+    Serial.print(a);
+    Serial.print(b);
+    Serial.print(c);
+    Serial.print(d);
+    Serial.print(" ms\n");
+  }
 }
 
 void clear(void) {

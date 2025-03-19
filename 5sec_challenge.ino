@@ -76,7 +76,7 @@ void setup() {
   shiftOut(DOUT, CLK, LSBFIRST, font[0]);
   shiftOut(DOUT, CLK, LSBFIRST, font[0]);
   shiftOut(DOUT, CLK, LSBFIRST, font[0]);
-  shiftOut(DOUT, CLK, LSBFIRST, font[0] + 1);
+  shiftOut(DOUT, CLK, LSBFIRST, font[5] + 1);
   delayMicroseconds(10);
   digitalWrite(LATCH, HIGH);
 
